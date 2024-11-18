@@ -1,0 +1,39 @@
+plugins {
+    id "com.android.application"
+    id 'com.google.gms.google-services'
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.chomyeon"
+    compileSdk = 34 // 명시적으로 설정 (Flutter의 compileSdkVersion을 대신)
+    ndkVersion = "21.3.6528147"  // NDK 버전, 필요한 경우 설정
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.chomyeon"
+        minSdk = 23  // Firebase 관련 SDK와 호환
+        targetSdk = 34  // Android 13, 필요에 따라 설정
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."  // Flutter 프로젝트 경로 지정
+}

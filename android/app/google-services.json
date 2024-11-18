@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "386474482350",
+    "project_id": "moblieappchomyeon",
+    "storage_bucket": "moblieappchomyeon.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386474482350:android:232a18480d4c3255c72b3f",
+        "android_client_info": {
+          "package_name": "com.example.chomyeon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "386474482350-893sb0ghjem80sdib0mdsqgcdp9ujatj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByDGb7pJWgNr_utwmAbbT4hjkkWgwjuxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "386474482350-893sb0ghjem80sdib0mdsqgcdp9ujatj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "386474482350-e847bueuv9deks4pentkjucvmvevop16.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.company.chomyeon"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
