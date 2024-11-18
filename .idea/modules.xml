@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/chomyeon.iml" filepath="$PROJECT_DIR$/chomyeon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/chomyeon.iml" filepath="$PROJECT_DIR$/.idea/modules/chomyeon.iml" />
     </modules>
   </component>
 </project>

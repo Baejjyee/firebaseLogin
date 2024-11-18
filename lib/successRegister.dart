@@ -14,7 +14,9 @@ class successRegisterPage extends StatelessWidget {
           children: [
             Text('You have successfully registerd',style: TextStyle(fontSize: 20),),
             SizedBox(height: 20,),
-            ElevatedButton(onPressed: (){}, child: Text('login')),
+            ElevatedButton(onPressed: (){
+              Navigator.popUntil(context,(route) => route.isFirst);
+            }, child: Text('login')),
           ],
         ),
       ),

@@ -58,11 +58,15 @@ class _registerFormState extends State<registerForm> {
           SizedBox(height: 20,),
           ElevatedButton(
               onPressed: () async {
-                final newUser = await _authentication.createUserWithEmailAndPassword(email: email, password: password);
-                if (newUser.user != null){
-                  _formKey.currentState!.reset();
-                  if(!mounted) return;
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const successRegisterPage()));
+                try{
+                  final newUser = await _authentication.createUserWithEmailAndPassword(email: email, password: password);
+                  if (newUser.user != null){
+                    _formKey.currentState!.reset();
+                    if(!mounted) return;
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const successRegisterPage()));
+                  }
+                }catch(e){
+                  print(e);
                 }
               },
               child: Text('Enter')),

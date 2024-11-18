@@ -1,6 +1,8 @@
 import 'package:chomyeon/registerPage.dart';
 import 'package:flutter/material.dart';
 import 'registerPage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'chatPage.dart';
 class loginPage extends StatelessWidget {
   const loginPage({super.key});
   @override
@@ -20,6 +22,7 @@ class loginForm extends StatefulWidget {
   State<loginForm> createState() => _loginFormState();
 }
 class _loginFormState extends State<loginForm> {
+  final _authentication = FirebaseAuth.instance;
   final _formKey = GlobalKey<FormState>();
   String email ='';
   String password ='';
@@ -42,6 +45,7 @@ class _loginFormState extends State<loginForm> {
             height: 20,
           ),
           TextFormField(
+            obsucreText:true,
             decoration: InputDecoration(
               labelText: 'password'
             ),
@@ -51,7 +55,18 @@ class _loginFormState extends State<loginForm> {
             },
           ),
           SizedBox(height: 20,),
-          ElevatedButton(onPressed: (){}, child: Text('Enter')),
+          ElevatedButton(onPressed: () async{
+            try{
+              final currentUser = await _authentication.signInWithEmailAndPassword(email:email,password:password);
+              if(currentUser.user != null){
+                _formKey.currentState!.reset();
+                if(!mounted) return;
+                Navigator.push(context,MaterialPageRoute(builder:(context) => chatPage()));
+              }
+            }catch(e){
+              print(e);
+            }
+          }, child: Text('Enter')),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
